@@ -109,7 +109,7 @@ class FlPiP {
     }
 
     if (_isAndroid &&
-        !(android.aspectRatio.fitsInAndroidRequirements) &&
+        //!(android.aspectRatio.fitsInAndroidRequirements) &&
         !android.createNewEngine) {
       throw RationalNotMatchingAndroidRequirementsException(
           android.aspectRatio);
@@ -308,14 +308,14 @@ class Rational {
       {'numerator': numerator, 'denominator': denominator};
 }
 
-extension on Rational {
-  bool get fitsInAndroidRequirements {
-    final aspectRatio = numerator / denominator;
-    const min = 1 / 2.39;
-    const max = 2.39;
-    return (min <= aspectRatio) && (aspectRatio <= max);
-  }
-}
+// extension on Rational {
+//   bool get fitsInAndroidRequirements {
+//     final aspectRatio = numerator / denominator;
+//     const min = 1 / 2.39;
+//     const max = 2.39;
+//     return (min <= aspectRatio) && (aspectRatio <= max);
+//   }
+// }
 
 class RationalNotMatchingAndroidRequirementsException implements Exception {
   final Rational rational;
