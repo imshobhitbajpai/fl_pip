@@ -311,7 +311,7 @@ class Rational {
 extension on Rational {
   bool get fitsInAndroidRequirements {
     final aspectRatio = numerator / denominator;
-    const min = .418;
+    const min = 1/2.39;
     const max = 2.39;
     return (min <= aspectRatio) && (aspectRatio <= max);
   }
